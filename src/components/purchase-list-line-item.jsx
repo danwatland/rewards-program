@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { calculateRewardPoints } from '../services/reward-point-calculator.js';
 
 const PurchaseListLineItem = ({ amount, date, item }) => {
   return (
@@ -6,6 +7,7 @@ const PurchaseListLineItem = ({ amount, date, item }) => {
       <span>{item}</span>
       <span>{date.toLocaleString()}</span>
       <span>{amount}</span>
+      <span>{calculateRewardPoints({ amount })}</span>
     </li>
   );
 };
