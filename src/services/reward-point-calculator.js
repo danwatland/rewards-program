@@ -1,6 +1,6 @@
 const calculateRewardPoints = (purchase) => {
   let rewards = 0;
-  let { amount } = purchase;
+  const { amount } = purchase;
 
   if (amount <= 50) {
     return 0;
