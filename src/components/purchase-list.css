@@ -1,0 +1,9 @@
+.purchase-list-summary span {
+    display: block;
+}
+
+.purchase-list-line-item {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
