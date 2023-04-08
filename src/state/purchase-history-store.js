@@ -11,7 +11,7 @@ const usePurchaseHistoryStore = create((set) => ({
 
     set({
       isLoading: false,
-      purchaseHistory
+      purchaseHistory: purchaseHistory.sort((a, b) => b.date - a.date)
     });
   }
 }));

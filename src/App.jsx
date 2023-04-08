@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { usePurchaseHistoryStore } from './state/purchase-history-store';
 import './App.css'
-import { PurchaseList } from './components/purchase-list.jsx';
+import { PurchaseList } from './components/purchase-list';
 
 const App = () => {
   const { isLoading, getPurchaseHistory } = usePurchaseHistoryStore();
@@ -16,6 +16,7 @@ const App = () => {
 
   return (
     <div>
+      <h2>Purchase History</h2>
       { isLoading ? <progress /> : <PurchaseList /> }
     </div>
   )

@@ -1,15 +1,15 @@
 import './purchase-list.css';
 import * as React from 'react';
-import { usePurchaseHistoryStore } from '../state/purchase-history-store.js';
-import { PurchaseListLineItem } from './purchase-list-line-item.jsx';
-import { calculateRewardPoints } from '../services/reward-point-calculator.js';
+import { usePurchaseHistoryStore } from '../state/purchase-history-store';
+import { PurchaseListLineItem } from './purchase-list-line-item';
+import { calculateRewardPoints } from '../services/reward-point-calculator';
 
 const PurchaseList = () => {
   const purchaseHistory = usePurchaseHistoryStore((state) => state.purchaseHistory);
 
   return (
     <>
-      <table>
+      <table className='purchase-list-table'>
         <thead>
           <tr>
             <th>Item</th>
@@ -23,8 +23,8 @@ const PurchaseList = () => {
         </tbody>
       </table>
       <summary className='purchase-list-summary'>
-        <span>Total spent in last 3 months: ${purchaseHistory.reduce((sum, purchase) => sum + purchase.amount, 0)}</span>
-        <span>Reward points earned: {purchaseHistory.reduce((sum, purchase) => sum + calculateRewardPoints(purchase), 0)}</span>
+        <span>Reward points earned: </span>
+        <strong>{purchaseHistory.reduce((sum, purchase) => sum + calculateRewardPoints(purchase), 0)}</strong>
       </summary>
     </>
   );

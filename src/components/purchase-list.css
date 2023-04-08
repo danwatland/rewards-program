@@ -1,9 +1,18 @@
-.purchase-list-summary span {
-    display: block;
+.purchase-list-table {
+    border-spacing: 0 8px;
+    text-align: end;
 }
 
-.purchase-list-line-item {
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
+.purchase-list-table tbody tr td,
+.purchase-list-table thead tr th {
+    padding: 0 8px;
+}
+
+.purchase-list-table tbody tr:nth-of-type(2n) {
+    background-color: aliceblue;
+}
+
+.purchase-list-summary {
+    font-size: 1.2em;
+    margin-top: 16px;
 }
