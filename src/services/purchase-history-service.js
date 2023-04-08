@@ -3,8 +3,8 @@ const chance = new Chance();
 
 const fetchPurchaseHistory = async (fromDate, toDate) => {
   const createFakePurchase = () => ({
+    amount: chance.integer({ min: 5, max: 150 }),
     date: chance.date({ min: fromDate, max: toDate }),
-    amount: chance.integer({ min: 5, max: 150 })
   });
 
   return new Promise((resolve) => {
